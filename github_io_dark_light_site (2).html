@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT Website</title>
+
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --text-color: #ffffff;
+            --box-color: rgba(0, 0, 0, 0.85);
+            --accent: #ffffff;
+        }
+
+        body.light-mode {
+            --bg-color: #f5f5f5;
+            --text-color: #111111;
+            --box-color: rgba(255, 255, 255, 0.9);
+            --accent: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Background pattern */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 200px);
+            grid-auto-rows: 200px;
+            justify-content: center;
+            align-content: start;
+            opacity: 0.07;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .background img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            filter: brightness(0.3);
+        }
+
+        /* Main content box */
+        .content-box {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 120px auto;
+            padding: 40px;
+            background-color: var(--box-color);
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Top logo */
+        .top-logo {
+            display: block;
+            margin: 40px auto 20px auto;
+            width: 220px;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Toggle button */
+        .toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 3;
+        }
+
+        .toggle-btn {
+            padding: 10px 18px;
+            border: 2px solid var(--accent);
+            background: transparent;
+            color: var(--text-color);
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            background: var(--accent);
+            color: var(--bg-color);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="toggle-container">
+        <button class="toggle-btn" onclick="toggleMode()">Toggle Light Mode</button>
+    </div>
+
+    <!-- Background Pattern -->
+    <div class="background">
+        <!-- Repeat logo multiple times for tiled background -->
+        <!-- You can duplicate these lines to increase density if needed -->
+        <img src="Images/bt logo better.png" alt="Logo">
+        <img src="Images/bt logo better.png" alt="Logo">
+        <img src="Images/bt logo better.png" alt="Logo">
+        <img src="Images/bt logo better.png" alt="Logo">
+        <img src="Images/bt logo better.png" alt="Logo">
+        <img src="Images/bt logo better.png" alt="Logo">
+        <img src="Images/bt logo better.png" alt="Logo">
+        <img src="Images/bt logo better.png" alt="Logo">
+        <img src="Images/bt logo better.png" alt="Logo">
+        <img src="Images/bt logo better.png" alt="Logo">
+    </div>
+
+    <!-- Top Logo -->
+    <img src="Images/bt logo better.png" alt="Main Logo" class="top-logo">
+
+    <!-- Content Box -->
+    <div class="content-box">
+        <h1>Welcome to our Banana Tag Website</h1>
+        <p>Here you will find the newest updates and gamemodes.</p>
+        <p>Just scroll down and you will find update logs, tutorials and more.</p>
+        <p>The game this not available yet but will release as soon as possible!</p>
+    </div>
+
+   <div class="content-box">
+        <h1>Creator Program</h1>
+        <p>There are 3 kinds of Creators at the moment:</p>
+        <p>Normal Banana Creator: any SubCount Creator</p>
+        <p>Golden Banana Creator: 100 (or more) SubCount Creator</p>
+        <p>Diamond Banana Creator: 1000 (or more) SubCount Creator</p>
+        <br>
+        <p>At the <a href="#tutorials" style="color: #1e90ff; text-decoration: none;">"Tutorials"</a> tab you can find the tutorial on how to apply for Content Creator Program.</p>
+    </div>
+  
+    <div class="content-box">
+        <h1>Update Log</h1>
+        <p>Nothing here yet</p>
+    </div>
+  
+    <div class="content-box" id="tutorials">
+        <h1>Tutorials</h1>
+        <p>Creator Program Explained:</p>
+        <p><a href="https://youtu.be/aPmxa5dk264" target="_blank" style="color: #1e90ff; text-decoration: none;">https://youtu.be/aPmxa5dk264</a></p>
+    </div>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle("light-mode");
+        }
+    </script>
+
+</body>
+</html>
