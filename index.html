@@ -63,7 +63,7 @@
         animation-iteration-count: infinite;
     }
 
-    /* Alternate row movement */
+    /* Move images row by row horizontally (x-axis) */
     .background img:nth-child(odd) {
         animation-name: floatLeft;
     }
@@ -82,7 +82,9 @@
         0% { transform: translateX(0px); }
         50% { transform: translateX(40px); }
         100% { transform: translateX(0px); }
-    } row movement */
+    }
+
+    /* Alternate row movement */
     .background img:nth-child(odd) {
         animation-name: floatLeft;
     }
