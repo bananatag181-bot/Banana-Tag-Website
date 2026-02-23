@@ -58,10 +58,33 @@
         height: 300px;
         object-fit: contain;
         filter: brightness(0.6) contrast(1.1);
-        animation-duration: 18s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
     }
+
+    /* Horizontal row movement */
+    .background img:nth-child(1), .background img:nth-child(2), .background img:nth-child(3), .background img:nth-child(4), .background img:nth-child(5) {
+        animation: floatLeft 18s ease-in-out infinite;
+    }
+
+    .background img:nth-child(6), .background img:nth-child(7), .background img:nth-child(8), .background img:nth-child(9), .background img:nth-child(10) {
+        animation: floatRight 18s ease-in-out infinite;
+    }
+
+    .background img:nth-child(11), .background img:nth-child(12), .background img:nth-child(13), .background img:nth-child(14), .background img:nth-child(15) {
+        animation: floatLeft 18s ease-in-out infinite;
+    }
+
+    /* Repeat as needed for additional rows */
+
+    @keyframes floatLeft {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(-40px); }
+        100% { transform: translateX(0); }
+    }
+
+    @keyframes floatRight {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(40px); }
+        100%
 
     /* Move images row by row horizontally (x-axis) */
     .background img:nth-child(odd) {
